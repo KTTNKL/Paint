@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\Paint\\ProjectPaint\\LineEntity\\LineEntity.csproj": {}
+    "C:\\Users\\Ky Luong\\Documents\\GitHub\\Paint\\ProjectPaint\\LineEntity\\LineEntity.csproj": {}
   },
   "projects": {
-    "D:\\Project\\Paint\\ProjectPaint\\IContract\\IContract.csproj": {
+    "C:\\Users\\Ky Luong\\Documents\\GitHub\\Paint\\ProjectPaint\\IContract\\IContract.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\Paint\\ProjectPaint\\IContract\\IContract.csproj",
+        "projectUniqueName": "C:\\Users\\Ky Luong\\Documents\\GitHub\\Paint\\ProjectPaint\\IContract\\IContract.csproj",
         "projectName": "IContract",
-        "projectPath": "D:\\Project\\Paint\\ProjectPaint\\IContract\\IContract.csproj",
-        "packagesPath": "C:\\Users\\night\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\Paint\\ProjectPaint\\IContract\\obj\\",
+        "projectPath": "C:\\Users\\Ky Luong\\Documents\\GitHub\\Paint\\ProjectPaint\\IContract\\IContract.csproj",
+        "packagesPath": "C:\\Users\\Ky Luong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ky Luong\\Documents\\GitHub\\Paint\\ProjectPaint\\IContract\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\night\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Ky Luong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,25 +57,21 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Project\\Paint\\ProjectPaint\\LineEntity\\LineEntity.csproj": {
+    "C:\\Users\\Ky Luong\\Documents\\GitHub\\Paint\\ProjectPaint\\LineEntity\\LineEntity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\Paint\\ProjectPaint\\LineEntity\\LineEntity.csproj",
+        "projectUniqueName": "C:\\Users\\Ky Luong\\Documents\\GitHub\\Paint\\ProjectPaint\\LineEntity\\LineEntity.csproj",
         "projectName": "LineEntity",
-        "projectPath": "D:\\Project\\Paint\\ProjectPaint\\LineEntity\\LineEntity.csproj",
-        "packagesPath": "C:\\Users\\night\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\Paint\\ProjectPaint\\LineEntity\\obj\\",
+        "projectPath": "C:\\Users\\Ky Luong\\Documents\\GitHub\\Paint\\ProjectPaint\\LineEntity\\LineEntity.csproj",
+        "packagesPath": "C:\\Users\\Ky Luong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ky Luong\\Documents\\GitHub\\Paint\\ProjectPaint\\LineEntity\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\night\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Ky Luong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,8 +85,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "D:\\Project\\Paint\\ProjectPaint\\IContract\\IContract.csproj": {
-                "projectPath": "D:\\Project\\Paint\\ProjectPaint\\IContract\\IContract.csproj"
+              "C:\\Users\\Ky Luong\\Documents\\GitHub\\Paint\\ProjectPaint\\IContract\\IContract.csproj": {
+                "projectPath": "C:\\Users\\Ky Luong\\Documents\\GitHub\\Paint\\ProjectPaint\\IContract\\IContract.csproj"
               }
             }
           }
@@ -126,7 +118,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

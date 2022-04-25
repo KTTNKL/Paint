@@ -28,3 +28,18 @@ D:\DemoPaintPlugin\Rectangle\bin\Debug\net6.0-windows\Rectangle.pdb
 D:\DemoPaintPlugin\Rectangle\bin\Debug\net6.0-windows\IContract.dll
 D:\DemoPaintPlugin\Rectangle\bin\Debug\net6.0-windows\IContract.pdb
 D:\DemoPaintPlugin\Rectangle\obj\Debug\net6.0-windows\Rectangle.csproj.CopyComplete
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\bin\Debug\net6.0-windows\Rectangle.deps.json
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\bin\Debug\net6.0-windows\Rectangle.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\bin\Debug\net6.0-windows\ref\Rectangle.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\bin\Debug\net6.0-windows\Rectangle.pdb
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\bin\Debug\net6.0-windows\IContract.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\bin\Debug\net6.0-windows\IContract.pdb
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\obj\Debug\net6.0-windows\Rectangle.csproj.AssemblyReference.cache
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\obj\Debug\net6.0-windows\Rectangle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\obj\Debug\net6.0-windows\Rectangle.AssemblyInfoInputs.cache
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\obj\Debug\net6.0-windows\Rectangle.AssemblyInfo.cs
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\obj\Debug\net6.0-windows\Rectangle.csproj.CoreCompileInputs.cache
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\obj\Debug\net6.0-windows\Rectangle.csproj.CopyComplete
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\obj\Debug\net6.0-windows\Rectangle.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\obj\Debug\net6.0-windows\ref\Rectangle.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\Rectangle\obj\Debug\net6.0-windows\Rectangle.pdb

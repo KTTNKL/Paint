@@ -22,3 +22,14 @@ D:\DemoPaintPlugin\IContract\obj\Debug\net6.0-windows\IContract.dll
 D:\DemoPaintPlugin\IContract\obj\Debug\net6.0-windows\ref\IContract.dll
 D:\DemoPaintPlugin\IContract\obj\Debug\net6.0-windows\IContract.pdb
 D:\DemoPaintPlugin\IContract\obj\Debug\net6.0-windows\IContract.csproj.AssemblyReference.cache
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\IContract\bin\Debug\net6.0-windows\IContract.deps.json
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\IContract\bin\Debug\net6.0-windows\IContract.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\IContract\bin\Debug\net6.0-windows\ref\IContract.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\IContract\bin\Debug\net6.0-windows\IContract.pdb
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\IContract\obj\Debug\net6.0-windows\IContract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\IContract\obj\Debug\net6.0-windows\IContract.AssemblyInfoInputs.cache
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\IContract\obj\Debug\net6.0-windows\IContract.AssemblyInfo.cs
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\IContract\obj\Debug\net6.0-windows\IContract.csproj.CoreCompileInputs.cache
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\IContract\obj\Debug\net6.0-windows\IContract.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\IContract\obj\Debug\net6.0-windows\ref\IContract.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\IContract\obj\Debug\net6.0-windows\IContract.pdb

@@ -28,3 +28,18 @@ D:\DemoPaintPlugin\LineEntity\obj\Debug\net6.0-windows\LineEntity.csproj.CopyCom
 D:\DemoPaintPlugin\LineEntity\obj\Debug\net6.0-windows\LineEntity.dll
 D:\DemoPaintPlugin\LineEntity\obj\Debug\net6.0-windows\ref\LineEntity.dll
 D:\DemoPaintPlugin\LineEntity\obj\Debug\net6.0-windows\LineEntity.pdb
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\bin\Debug\net6.0-windows\LineEntity.deps.json
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\bin\Debug\net6.0-windows\LineEntity.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\bin\Debug\net6.0-windows\ref\LineEntity.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\bin\Debug\net6.0-windows\LineEntity.pdb
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\bin\Debug\net6.0-windows\IContract.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\bin\Debug\net6.0-windows\IContract.pdb
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\obj\Debug\net6.0-windows\LineEntity.csproj.AssemblyReference.cache
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\obj\Debug\net6.0-windows\LineEntity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\obj\Debug\net6.0-windows\LineEntity.AssemblyInfoInputs.cache
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\obj\Debug\net6.0-windows\LineEntity.AssemblyInfo.cs
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\obj\Debug\net6.0-windows\LineEntity.csproj.CoreCompileInputs.cache
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\obj\Debug\net6.0-windows\LineEntity.csproj.CopyComplete
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\obj\Debug\net6.0-windows\LineEntity.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\obj\Debug\net6.0-windows\ref\LineEntity.dll
+C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\LineEntity\obj\Debug\net6.0-windows\LineEntity.pdb
