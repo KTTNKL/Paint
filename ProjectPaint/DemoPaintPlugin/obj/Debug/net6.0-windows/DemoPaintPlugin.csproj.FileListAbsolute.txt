@@ -46,27 +46,3 @@ D:\DemoPaintPlugin\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.dll
 D:\DemoPaintPlugin\DemoPaintPlugin\obj\Debug\net6.0-windows\ref\DemoPaintPlugin.dll
 D:\DemoPaintPlugin\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.pdb
 D:\DemoPaintPlugin\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.genruntimeconfig.cache
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\bin\Debug\net6.0-windows\DemoPaintPlugin.exe
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\bin\Debug\net6.0-windows\DemoPaintPlugin.deps.json
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\bin\Debug\net6.0-windows\DemoPaintPlugin.runtimeconfig.json
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\bin\Debug\net6.0-windows\DemoPaintPlugin.dll
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\bin\Debug\net6.0-windows\ref\DemoPaintPlugin.dll
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\bin\Debug\net6.0-windows\DemoPaintPlugin.pdb
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\bin\Debug\net6.0-windows\IContract.dll
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\bin\Debug\net6.0-windows\IContract.pdb
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.csproj.AssemblyReference.cache
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\MainWindow.g.cs
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\App.g.cs
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin_MarkupCompile.cache
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin_MarkupCompile.lref
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\MainWindow.baml
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.g.resources
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.AssemblyInfoInputs.cache
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.AssemblyInfo.cs
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.csproj.CoreCompileInputs.cache
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.csproj.CopyComplete
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.dll
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\ref\DemoPaintPlugin.dll
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.pdb
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\DemoPaintPlugin\obj\Debug\net6.0-windows\DemoPaintPlugin.genruntimeconfig.cache

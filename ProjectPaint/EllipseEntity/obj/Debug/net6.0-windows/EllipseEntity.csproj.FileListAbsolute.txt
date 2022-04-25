@@ -13,18 +13,3 @@ D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.csproj.C
 D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.dll
 D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\ref\EllipseEntity.dll
 D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.pdb
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\bin\Debug\net6.0-windows\EllipseEntity.deps.json
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\bin\Debug\net6.0-windows\EllipseEntity.dll
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\bin\Debug\net6.0-windows\ref\EllipseEntity.dll
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\bin\Debug\net6.0-windows\EllipseEntity.pdb
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\bin\Debug\net6.0-windows\IContract.dll
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\bin\Debug\net6.0-windows\IContract.pdb
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.csproj.AssemblyReference.cache
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.AssemblyInfoInputs.cache
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.AssemblyInfo.cs
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.csproj.CoreCompileInputs.cache
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.csproj.CopyComplete
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.dll
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\obj\Debug\net6.0-windows\ref\EllipseEntity.dll
-C:\Users\Ky Luong\Documents\GitHub\Paint\ProjectPaint\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.pdb
