@@ -1,0 +1,15 @@
+D:\DemoPaintPlugin\EllipseEntity\bin\Debug\net6.0-windows\EllipseEntity.deps.json
+D:\DemoPaintPlugin\EllipseEntity\bin\Debug\net6.0-windows\EllipseEntity.dll
+D:\DemoPaintPlugin\EllipseEntity\bin\Debug\net6.0-windows\ref\EllipseEntity.dll
+D:\DemoPaintPlugin\EllipseEntity\bin\Debug\net6.0-windows\EllipseEntity.pdb
+D:\DemoPaintPlugin\EllipseEntity\bin\Debug\net6.0-windows\IContract.dll
+D:\DemoPaintPlugin\EllipseEntity\bin\Debug\net6.0-windows\IContract.pdb
+D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.csproj.AssemblyReference.cache
+D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.GeneratedMSBuildEditorConfig.editorconfig
+D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.AssemblyInfoInputs.cache
+D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.AssemblyInfo.cs
+D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.csproj.CoreCompileInputs.cache
+D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.csproj.CopyComplete
+D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.dll
+D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\ref\EllipseEntity.dll
+D:\DemoPaintPlugin\EllipseEntity\obj\Debug\net6.0-windows\EllipseEntity.pdb
