@@ -25,7 +25,7 @@ namespace DemoPaintPlugin
     {
 
         // State
-       
+        Uri uri;
         int color = 0;
         int thickness = 1;
         int stroke_type = 0;
@@ -317,15 +317,24 @@ namespace DemoPaintPlugin
             if (result == true)
             {
                 string filename = dl1.FileName;
+               
                 ImageBrush brush = new ImageBrush();
-                Uri uri = new Uri(@filename, UriKind.Relative);
-                brush.ImageSource = new BitmapImage(uri);
+                uri = new Uri(@filename, UriKind.Relative);
+                var bitmapImage = new BitmapImage();
+
+                bitmapImage.BeginInit();
+                bitmapImage.UriSource = uri;
+                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.EndInit();
+
+                brush.ImageSource = bitmapImage;
                 canvas.Background = brush;
                 canvas.Children.Clear();
+                _drawnShapes.Clear();
             }
 
         }
-
+        
         private void saveImage_Click(object sender, RoutedEventArgs e)
         {
             RenderTargetBitmap targetBitmap =
@@ -342,7 +351,12 @@ namespace DemoPaintPlugin
             fs = File.Open("RESULT.png", FileMode.OpenOrCreate);
             encoder.Save(fs);
             fs.Close();
+            string appPath = System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+
+            MessageBox.Show($"Save successfully at {appPath}");
 
         }
+
+       
     }
 }
