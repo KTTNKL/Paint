@@ -100,5 +100,49 @@ namespace RectangleEntity
             }
             return element;
         }
+
+        public string getColor(IShapeEntity entity)
+        {
+            return "red";
+        }
+
+        public int getThickness(IShapeEntity entity)
+        {
+            return 1;
+        }
+
+        public double getX1(IShapeEntity entity)
+        {
+            var rectangle = entity as RectangleEntity;
+
+            // TODO: chú ý việc đảo lại rightbottom và topleft 
+            return (double)(rectangle.TopLeft.X);
+        }
+
+        public double getX2(IShapeEntity entity)
+        {
+            var rectangle = entity as RectangleEntity;
+
+            // TODO: chú ý việc đảo lại rightbottom và topleft 
+            return (double)(rectangle.RightBottom.X);
+
+        }
+
+        public double getY1(IShapeEntity entity)
+        {
+            var rectangle = entity as RectangleEntity;
+
+            // TODO: chú ý việc đảo lại rightbottom và topleft 
+            return (double)(rectangle.TopLeft.Y);
+        }
+
+        public double getY2(IShapeEntity entity)
+        {
+            var rectangle = entity as RectangleEntity;
+
+            // TODO: chú ý việc đảo lại rightbottom và topleft 
+        
+            return (double)(rectangle.RightBottom.Y);
+        }
     }
 }

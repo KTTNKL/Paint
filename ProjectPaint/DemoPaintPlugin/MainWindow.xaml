@@ -9,6 +9,9 @@
     <DockPanel LastChildFill="True">
         <StackPanel Name="actionsStackPanel" Orientation="Horizontal" Height="50" DockPanel.Dock="Top">
 
+            <Button x:Name="save" Width="50" Height="35" Click="save_Click" Content="Save"></Button>
+            <Button x:Name="load" Width="50" Height="35" Click="load_Click" Content="Load"></Button>
+
         </StackPanel>
         <StackPanel Name="optionStackPanel" Orientation="Horizontal" Height="55"  DockPanel.Dock="Top">
             <ComboBox Name="color_ComboBox" Width="100" Height="35" Margin="10">
@@ -30,6 +33,12 @@
                 <ComboBoxItem>Dot</ComboBoxItem>
                 <ComboBoxItem>Dash Dot Dot</ComboBoxItem>
             </ComboBox>
+            <Button x:Name="saveImageButton" Width="80" Height="35" Content="Save Image" Click="saveImage_Click" Margin="10">
+                
+            </Button>
+            <Button x:Name="loadImageButton" Width="80" Height="35" Content="Load Image" Click="loadImage_Click" Margin="10">
+
+            </Button>
         </StackPanel>
         <Grid>
             <Canvas x:Name="canvas" Background="Gray" Focusable="False" >
@@ -38,5 +47,6 @@
             </Border>
 
         </Grid>
+        
     </DockPanel>
 </Window>

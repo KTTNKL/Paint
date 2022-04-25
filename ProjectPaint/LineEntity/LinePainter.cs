@@ -28,5 +28,44 @@ namespace LineEntity
 
             return element;
         }
+
+        public string getColor(IShapeEntity entity)
+        {
+            return "black";
+        }
+
+        public int getThickness(IShapeEntity entity)
+        {
+            return 1;
+        }
+
+        public float getWidth(IShapeEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public double getX1(IShapeEntity entity)
+        {
+            var line = entity as LineEntity;
+            return (float)line.Start.X;
+        }
+
+        public double getX2(IShapeEntity entity)
+        {
+            var line = entity as LineEntity;
+            return (float)line.End.X;
+        }
+
+        public double getY1(IShapeEntity entity)
+        {
+            var line = entity as LineEntity;
+            return (float)line.Start.Y;
+        }
+
+        public double getY2(IShapeEntity entity)
+        {
+            var line = entity as LineEntity;
+            return (float)line.End.Y;
+        }
     }
 }
