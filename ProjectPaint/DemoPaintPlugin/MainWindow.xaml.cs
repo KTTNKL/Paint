@@ -25,7 +25,10 @@ namespace DemoPaintPlugin
     {
 
         // State
-        Uri uri;
+
+        List<IShapeEntity> _drawnList = new List<IShapeEntity>();
+        int currentIndex = -1;
+
         int color = 0;
         int thickness = 1;
         int stroke_type = 0;
@@ -49,6 +52,7 @@ namespace DemoPaintPlugin
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            
             /* Nạp tất cả dll, tìm kiếm entity và business */
             var exeFolder = AppDomain.CurrentDomain.BaseDirectory;
             var folderInfo = new DirectoryInfo(exeFolder);
@@ -100,8 +104,9 @@ namespace DemoPaintPlugin
                 button.Height = 35;
                 button.Click += Button_Click;
 
+
                 //TODO: thêm các nút bấm vào giao diện
-                actionsStackPanel.Children.Add(button);
+                shapesStackPanel.Children.Add(button);
             }
 
             if (_shapesPrototypes.Count > 0)
@@ -186,8 +191,17 @@ namespace DemoPaintPlugin
             var end = e.GetPosition(canvas); // Điểm kết thúc
 
             _preview.HandleEnd(end);
-
             _drawnShapes.Add(_preview.Clone() as IShapeEntity);
+
+
+            for (int i = currentIndex + 1; i < _drawnList.Count(); i++)
+            {
+                _drawnList.RemoveAt(i);
+                i--;
+            }
+            _drawnList.Add(_preview.Clone() as IShapeEntity);
+            currentIndex++;
+
         }
 
         public void readData()
@@ -357,6 +371,41 @@ namespace DemoPaintPlugin
 
         }
 
-       
+        private void undo_Click(object sender, RoutedEventArgs e)
+        {
+            if (_drawnShapes.Count() >= 0)
+            {
+                canvas.Children.Clear();
+                _drawnShapes.RemoveAt(_drawnShapes.Count() - 1);
+                currentIndex--;
+                foreach (var item in _drawnShapes)
+                {
+                    var painter = _painterPrototypes[item.Name];
+                    var shape = painter.Draw(item);
+
+                    canvas.Children.Add(shape);
+                }
+            }
+
+        }
+
+        private void redo_Click(object sender, RoutedEventArgs e)
+        {
+            if (currentIndex < (_drawnList.Count() - 1))
+            {
+                currentIndex++;
+                _drawnShapes.Add(_drawnList[currentIndex].Clone() as IShapeEntity);
+                canvas.Children.Clear();
+                foreach (var item in _drawnShapes)
+                {
+                    var painter = _painterPrototypes[item.Name];
+                    var shape = painter.Draw(item);
+
+                    canvas.Children.Add(shape);
+                }
+            }
+
+        }
+
     }
 }
