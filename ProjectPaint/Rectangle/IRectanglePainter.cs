@@ -13,14 +13,18 @@ namespace RectangleEntity
 {
     public class IRectanglePainter : IPaintBusiness
     {
-        public UIElement Draw(IShapeEntity shape, int color, int thickness, int stroke_type)
+        public UIElement Draw(IShapeEntity shape)
         {
-            var line = new double[] {  };
+            var solid = new double[] {  };
             var dash = new double[] { 6, 1 };
             var dot = new double[] { 1, 1 };
             var dash_dot_dot = new double[] { 4, 1, 1, 1, 1, 1 };
 
+
             var rectangle = shape as RectangleEntity;
+            int color = rectangle.color;
+            int thickness = rectangle.thickness;
+            int stroke_type = rectangle.stroke_type;
             double width = 0;
             double height = 0;
             Rectangle element = null;
@@ -30,7 +34,7 @@ namespace RectangleEntity
                 Height = height,
                 StrokeThickness = thickness,
                 Stroke = new SolidColorBrush(Colors.Black),
-                StrokeDashArray = new DoubleCollection(line)
+                StrokeDashArray = new DoubleCollection(solid)
             };
 
             if(stroke_type == 1)
@@ -101,14 +105,24 @@ namespace RectangleEntity
             return element;
         }
 
-        public string getColor(IShapeEntity entity)
+
+        public int getColor(IShapeEntity entity)
         {
-            return "red";
+            var rectangle = entity as RectangleEntity;
+            return rectangle.color;
         }
 
         public int getThickness(IShapeEntity entity)
         {
-            return 1;
+            var rectangle = entity as RectangleEntity;
+            return rectangle.thickness;
+        }
+
+
+        public int getStrokeType(IShapeEntity entity)
+        {
+            var rectangle = entity as RectangleEntity;
+            return rectangle.stroke_type;
         }
 
         public double getX1(IShapeEntity entity)
@@ -143,6 +157,24 @@ namespace RectangleEntity
             // TODO: chú ý việc đảo lại rightbottom và topleft 
         
             return (double)(rectangle.RightBottom.Y);
+        }
+
+        public void setColor(IShapeEntity entity, int color)
+        {
+            var rectangle = entity as RectangleEntity;
+            rectangle.color = color; 
+        }
+
+        public void setThickness(IShapeEntity entity, int thickness)
+        {
+            var rectangle = entity as RectangleEntity;
+            rectangle.thickness = thickness;
+        }
+
+        public void setStrokeType(IShapeEntity entity, int stroketype)
+        {
+            var rectangle = entity as RectangleEntity;
+            rectangle.stroke_type = stroketype;
         }
     }
 }

@@ -14,6 +14,10 @@ namespace RectangleEntity
 
         public BitmapImage Icon => throw new NotImplementedException();
 
+        public int color { get ; set ; }
+        public int thickness { get ; set; }
+        public int stroke_type { get ; set; }
+
         public void HandleStart(Point point)
         {
             TopLeft = point;
