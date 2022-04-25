@@ -33,7 +33,51 @@ namespace EllipseEntity
 
             return element;
         }
-       
+
+        public string getColor(IShapeEntity entity)
+        {
+            return "black";
+        }
+
+
+        public int getThickness(IShapeEntity entity)
+        {
+            return 1;
+        }
+
+        public double getX1(IShapeEntity entity)
+        {
+            var ellipse = entity as EllipseEntity;
+
+            // TODO: chú ý việc đảo lại rightbottom và topleft 
+            return (double)(ellipse.TopLeft.X);
+            
+        }
+
+        public double getX2(IShapeEntity entity)
+        {
+            var ellipse = entity as EllipseEntity;
+
+            // TODO: chú ý việc đảo lại rightbottom và topleft 
+            return (double)(ellipse.RightBottom.X);
+            
+        }
+
+        public double getY1(IShapeEntity entity)
+        {
+            var ellipse = entity as EllipseEntity;
+
+            // TODO: chú ý việc đảo lại rightbottom và topleft 
+            return (double)(ellipse.TopLeft.Y);
+        }
+
+        public double getY2(IShapeEntity entity)
+        {
+            var ellipse = entity as EllipseEntity;
+
+            // TODO: chú ý việc đảo lại rightbottom và topleft 
+            return (double)(ellipse.RightBottom.Y);
+        }
     }
 
 }
