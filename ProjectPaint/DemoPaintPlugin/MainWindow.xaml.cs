@@ -333,7 +333,7 @@ namespace DemoPaintPlugin
                 string filename = dl1.FileName;
                
                 ImageBrush brush = new ImageBrush();
-                uri = new Uri(@filename, UriKind.Relative);
+                Uri uri = new Uri(@filename, UriKind.Relative);
                 var bitmapImage = new BitmapImage();
 
                 bitmapImage.BeginInit();
