@@ -16,21 +16,55 @@ namespace EllipseEntity
         public UIElement Draw(IShapeEntity shape)
         {
             var ellipse = shape as EllipseEntity;
-
-            // TODO: chú ý việc đảo lại rightbottom và topleft 
-            double width = ellipse.RightBottom.X - ellipse.TopLeft.X;
-            double height = ellipse.RightBottom.Y - ellipse.TopLeft.Y;
-
-            var element = new Ellipse()
+            double width = 0;
+            double height = 0;
+            Ellipse element = null;
+            element = new Ellipse()
             {
                 Width = width,
                 Height = height,
                 StrokeThickness = 1,
                 Stroke = new SolidColorBrush(Colors.Red)
             };
-            Canvas.SetLeft(element, ellipse.TopLeft.X);
-            Canvas.SetTop(element, ellipse.TopLeft.Y);
 
+            if (ellipse.RightBottom.X - ellipse.TopLeft.X >= 0 && ellipse.RightBottom.Y - ellipse.TopLeft.Y >= 0)
+            {
+                width = ellipse.RightBottom.X - ellipse.TopLeft.X;
+                height = ellipse.RightBottom.Y - ellipse.TopLeft.Y;
+                element.Width = width;
+                element.Height = height;
+                Canvas.SetLeft(element, ellipse.TopLeft.X);
+                Canvas.SetTop(element, ellipse.TopLeft.Y);
+            }
+            else if (ellipse.RightBottom.X - ellipse.TopLeft.X <= 0 && ellipse.RightBottom.Y - ellipse.TopLeft.Y >= 0)
+            {
+                width = -ellipse.RightBottom.X + ellipse.TopLeft.X;
+                height = ellipse.RightBottom.Y - ellipse.TopLeft.Y;
+                element.Width = width;
+                element.Height = height;
+                Canvas.SetLeft(element, ellipse.RightBottom.X);
+                Canvas.SetTop(element, ellipse.TopLeft.Y);
+            }
+
+            else if (ellipse.RightBottom.X - ellipse.TopLeft.X <= 0 && ellipse.RightBottom.Y - ellipse.TopLeft.Y <= 0)
+            {
+                width = -ellipse.RightBottom.X + ellipse.TopLeft.X;
+                height = -ellipse.RightBottom.Y + ellipse.TopLeft.Y;
+                element.Width = width;
+                element.Height = height;
+                Canvas.SetLeft(element, ellipse.RightBottom.X);
+                Canvas.SetTop(element, ellipse.RightBottom.Y);
+            }
+            else
+            {
+                width = ellipse.RightBottom.X - ellipse.TopLeft.X;
+                height = -ellipse.RightBottom.Y + ellipse.TopLeft.Y;
+                element.Width = width;
+                element.Height = height;
+                Canvas.SetLeft(element, ellipse.TopLeft.X);
+                Canvas.SetTop(element, ellipse.RightBottom.Y);
+
+            }
             return element;
         }
        
