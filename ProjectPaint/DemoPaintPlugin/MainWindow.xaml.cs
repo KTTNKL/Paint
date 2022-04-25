@@ -23,12 +23,20 @@ namespace DemoPaintPlugin
     /// </summary>
     public partial class MainWindow : Window
     {
+
         // State
+       
+        int color = 0;
+        int thickness = 1;
+        int stroke_type = 0;
         bool _isDrawing = false;
         string _currentType = "";
         IShapeEntity _preview = null;
         Point _start;
         List<IShapeEntity> _drawnShapes = new List<IShapeEntity>();
+        List<int> _colors = new List<int>();
+        List<int> _thicknesses = new List<int>();
+        List<int> _stroke_types = new List<int>();
 
         // Cấu hình
         Dictionary<string, IPaintBusiness> _painterPrototypes = new Dictionary<string, IPaintBusiness>();
@@ -95,7 +103,7 @@ namespace DemoPaintPlugin
                 //TODO: thêm các nút bấm vào giao diện
                 actionsStackPanel.Children.Add(button);
             }
-            
+
             if (_shapesPrototypes.Count > 0)
             {
                 //Lựa chọn nút bấm đầu tiên
@@ -103,6 +111,8 @@ namespace DemoPaintPlugin
                 _currentType = key;
                 _preview = (shape.Clone() as IShapeEntity)!;
             }
+
+            
             
         }
 
@@ -134,17 +144,32 @@ namespace DemoPaintPlugin
                 // Xóa đi tất cả bản vẽ cũ và vẽ lại những đường thẳng trước đó
                 canvas.Children.Clear(); // Xóa đi toàn bộ
 
+                if(color_ComboBox.SelectedIndex >=0)
+                {
+                    color = color_ComboBox.SelectedIndex;
+                }
+                if(thickness_ComboBox.SelectedIndex >=0)
+                {
+                    thickness = thickness_ComboBox.SelectedIndex + 1;
+                }
+                if(stroke_type_ComboBox.SelectedIndex >=0)
+                {
+                    stroke_type = stroke_type_ComboBox.SelectedIndex;
+                }
+
                 // Vẽ lại những hình đã vẽ trước đó
+                int i = 0;
                 foreach (var item in _drawnShapes)
                 {
+                    
                     var painter = _painterPrototypes[item.Name];
-                    var shape = painter.Draw(item);
-
+                    var shape = painter.Draw(item, _colors[i], _thicknesses[i], _stroke_types[i]);                  
                     canvas.Children.Add(shape);
+                    ++i;
                 }
 
                 var previewPainter = _painterPrototypes[_preview.Name];
-                var previewElement = previewPainter.Draw(_preview);
+                var previewElement = previewPainter.Draw(_preview, color, thickness, stroke_type);
                 canvas.Children.Add(previewElement);
             }
         }
@@ -158,6 +183,9 @@ namespace DemoPaintPlugin
             _preview.HandleEnd(end);
 
             _drawnShapes.Add(_preview.Clone() as IShapeEntity);
+            _colors.Add(color);
+            _thicknesses.Add(thickness);
+            _stroke_types.Add(stroke_type);
         }
 
         public void readData()

@@ -9,6 +9,9 @@ namespace IContract
 {
     public interface IPaintBusiness
     {
+
+        UIElement Draw(IShapeEntity entity, int color, int thickness, int stroke_type);
+
         UIElement Draw(IShapeEntity entity);
 
         double getX1(IShapeEntity entity);
@@ -17,6 +20,7 @@ namespace IContract
         double getY2(IShapeEntity entity);
         int getThickness(IShapeEntity entity);
         string getColor(IShapeEntity entity);
+
 
     }
 }

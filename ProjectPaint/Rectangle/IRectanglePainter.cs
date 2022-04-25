@@ -13,8 +13,13 @@ namespace RectangleEntity
 {
     public class IRectanglePainter : IPaintBusiness
     {
-        public UIElement Draw(IShapeEntity shape)
+        public UIElement Draw(IShapeEntity shape, int color, int thickness, int stroke_type)
         {
+            var line = new double[] {  };
+            var dash = new double[] { 6, 1 };
+            var dot = new double[] { 1, 1 };
+            var dash_dot_dot = new double[] { 4, 1, 1, 1, 1, 1 };
+
             var rectangle = shape as RectangleEntity;
             double width = 0;
             double height = 0;
@@ -23,9 +28,37 @@ namespace RectangleEntity
             {
                 Width = width,
                 Height = height,
-                StrokeThickness = 1,
-                Stroke = new SolidColorBrush(Colors.Red)
+                StrokeThickness = thickness,
+                Stroke = new SolidColorBrush(Colors.Black),
+                StrokeDashArray = new DoubleCollection(line)
             };
+
+            if(stroke_type == 1)
+            {
+                element.StrokeDashArray = new DoubleCollection(dash);
+            }
+            if (stroke_type == 2)
+            {
+                element.StrokeDashArray = new DoubleCollection(dot);
+            }
+            if (stroke_type == 3)
+            {
+                element.StrokeDashArray = new DoubleCollection(dash_dot_dot);
+            }
+
+            if (color == 1)
+            {
+                element.Stroke = new SolidColorBrush(Colors.Red);
+
+            }
+            if (color == 2)
+            {
+                element.Stroke = new SolidColorBrush(Colors.Green);
+            }
+            if (color == 3)
+            {
+                element.Stroke = new SolidColorBrush(Colors.Blue);
+            }
 
             if (rectangle.RightBottom.X - rectangle.TopLeft.X >= 0 && rectangle.RightBottom.Y - rectangle.TopLeft.Y >= 0)
             {
