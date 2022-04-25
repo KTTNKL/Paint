@@ -163,13 +163,18 @@ namespace DemoPaintPlugin
                 {
                     
                     var painter = _painterPrototypes[item.Name];
-                    var shape = painter.Draw(item, _colors[i], _thicknesses[i], _stroke_types[i]);                  
+
+
+                    var shape = painter.Draw(item);                  
                     canvas.Children.Add(shape);
                     ++i;
                 }
 
                 var previewPainter = _painterPrototypes[_preview.Name];
-                var previewElement = previewPainter.Draw(_preview, color, thickness, stroke_type);
+                previewPainter.setColor(_preview, color);
+                previewPainter.setThickness(_preview, thickness);
+                previewPainter.setStrokeType(_preview, stroke_type);
+                var previewElement = previewPainter.Draw(_preview);
                 canvas.Children.Add(previewElement);
             }
         }
@@ -183,9 +188,6 @@ namespace DemoPaintPlugin
             _preview.HandleEnd(end);
 
             _drawnShapes.Add(_preview.Clone() as IShapeEntity);
-            _colors.Add(color);
-            _thicknesses.Add(thickness);
-            _stroke_types.Add(stroke_type);
         }
 
         public void readData()
@@ -218,13 +220,17 @@ namespace DemoPaintPlugin
                     startPoint.Y = br.ReadDouble();
                     endPoint.Y = br.ReadDouble();
 
-                    string color = br.ReadString();
-                    int thickness = br.ReadInt32();
+                    int color_read = br.ReadInt32();
+                    int thickness_read = br.ReadInt32();
+                    int stroketype_read = br.ReadInt32();
 
                     _preview = (_shapesPrototypes[name].Clone() as IShapeEntity)!;
 
                     _preview.HandleStart(startPoint);
                     _preview.HandleEnd(endPoint);
+                    _preview.color = color_read;
+                    _preview.thickness = thickness_read;
+                    _preview.stroke_type = stroketype_read;
                     _drawnShapes.Add(_preview.Clone() as IShapeEntity);
 
                 }
@@ -276,6 +282,7 @@ namespace DemoPaintPlugin
                     bw.Write(painter.getY2(item));
                     bw.Write(painter.getColor(item));
                     bw.Write(painter.getThickness(item));
+                    bw.Write(painter.getStrokeType(item));
                 }
                 MessageBox.Show("Save Successfully");
             }
@@ -297,6 +304,45 @@ namespace DemoPaintPlugin
         private void save_Click(object sender, RoutedEventArgs e)
         {
             WriteData();
+        }
+
+        private void loadImage_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dl1 = new Microsoft.Win32.OpenFileDialog();
+            dl1.FileName = "MYFileSave";
+            dl1.DefaultExt = ".png";
+            dl1.Filter = "Image documents (.png)|*.png";
+            Nullable<bool> result = dl1.ShowDialog();
+
+            if (result == true)
+            {
+                string filename = dl1.FileName;
+                ImageBrush brush = new ImageBrush();
+                Uri uri = new Uri(@filename, UriKind.Relative);
+                brush.ImageSource = new BitmapImage(uri);
+                canvas.Background = brush;
+                canvas.Children.Clear();
+            }
+
+        }
+
+        private void saveImage_Click(object sender, RoutedEventArgs e)
+        {
+            RenderTargetBitmap targetBitmap =
+            new RenderTargetBitmap((int)canvas.ActualWidth,
+                           (int)canvas.ActualHeight,
+                           96d, 96d,
+                           PixelFormats.Default);
+            targetBitmap.Render(canvas);
+
+            BmpBitmapEncoder encoder = new BmpBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(targetBitmap));
+            var num = 1;
+            FileStream fs;
+            fs = File.Open("RESULT.png", FileMode.OpenOrCreate);
+            encoder.Save(fs);
+            fs.Close();
+
         }
     }
 }
