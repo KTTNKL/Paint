@@ -120,8 +120,8 @@ namespace DemoPaintPlugin
         {
             _isDrawing = true;
             _start = e.GetPosition(canvas);
-
             _preview.HandleStart(_start);
+
         }
 
         private void Border_MouseMove(object sender, MouseEventArgs e)
@@ -158,6 +158,117 @@ namespace DemoPaintPlugin
             _preview.HandleEnd(end);
 
             _drawnShapes.Add(_preview.Clone() as IShapeEntity);
+        }
+
+        public void readData()
+        {
+            BinaryReader br;
+            //reading from the file
+            try
+            {
+                br = new BinaryReader(new FileStream("mydata", FileMode.Open));
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e.Message + "\n Cannot open file.");
+                return;
+            }
+
+            try
+            {
+                int num = br.ReadInt32();
+                for(int i =0; i < num; i++)
+                {
+                    string name = br.ReadString();
+
+                    Point startPoint = new Point();
+                    Point endPoint = new Point();
+
+                    startPoint.X = br.ReadDouble();
+                    endPoint.X = br.ReadDouble();
+
+                    startPoint.Y = br.ReadDouble();
+                    endPoint.Y = br.ReadDouble();
+
+                    string color = br.ReadString();
+                    int thickness = br.ReadInt32();
+
+                    _preview = (_shapesPrototypes[name].Clone() as IShapeEntity)!;
+
+                    _preview.HandleStart(startPoint);
+                    _preview.HandleEnd(endPoint);
+                    _drawnShapes.Add(_preview.Clone() as IShapeEntity);
+
+                }
+                foreach (var item in _drawnShapes)
+                {
+                    var painter = _painterPrototypes[item.Name];
+                    var shape = painter.Draw(item);
+
+                    canvas.Children.Add(shape);
+                }
+
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e.Message + "\n Cannot read from file.");
+                return;
+            }
+            br.Close();
+        }
+        public void WriteData()
+        {
+            BinaryWriter bw;
+            
+
+
+            //create the file
+            try
+            {
+                bw = new BinaryWriter(new FileStream("mydata", FileMode.Create));
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e.Message + "\n Cannot create file.");
+                return;
+            }
+
+            //writing into the file
+            try
+            {
+                bw.Write(_drawnShapes.Count());
+
+                foreach (var item in _drawnShapes)
+                {
+                    bw.Write(item.Name);
+                    var painter = _painterPrototypes[item.Name];
+                    bw.Write(painter.getX1(item));
+                    bw.Write(painter.getX2(item));
+                    bw.Write(painter.getY1(item));
+                    bw.Write(painter.getY2(item));
+                    bw.Write(painter.getColor(item));
+                    bw.Write(painter.getThickness(item));
+                }
+                MessageBox.Show("Save Successfully");
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e.Message + "\n Cannot write to file.");
+                return;
+            }
+            bw.Close();
+
+           
+        }
+
+        private void load_Click(object sender, RoutedEventArgs e)
+        {
+
+            readData();
+        }
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+            WriteData();
         }
     }
 }
