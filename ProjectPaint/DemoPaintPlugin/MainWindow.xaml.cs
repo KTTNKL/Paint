@@ -1,6 +1,7 @@
 ﻿using IContract;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -25,6 +26,7 @@ namespace DemoPaintPlugin
     {
 
         // State
+        bool _isMouseDown = false;
 
         List<IShapeEntity> _drawnList = new List<IShapeEntity>();
         int currentIndex = -1;
@@ -37,9 +39,7 @@ namespace DemoPaintPlugin
         IShapeEntity _preview = null;
         Point _start;
         List<IShapeEntity> _drawnShapes = new List<IShapeEntity>();
-        List<int> _colors = new List<int>();
-        List<int> _thicknesses = new List<int>();
-        List<int> _stroke_types = new List<int>();
+     
 
         // Cấu hình
         Dictionary<string, IPaintBusiness> _painterPrototypes = new Dictionary<string, IPaintBusiness>();
@@ -92,7 +92,7 @@ namespace DemoPaintPlugin
                 }
             }
 
-            Title = $"Tìm thấy {_shapesPrototypes.Count} hình";
+            Title = "PAINT";
 
             // Tạo ra các nút bấm tương ứng
             foreach(var (name, entity) in _shapesPrototypes)
@@ -133,75 +133,84 @@ namespace DemoPaintPlugin
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            _isDrawing = true;
-            _start = e.GetPosition(canvas);
-            _preview.HandleStart(_start);
-
+                 _isMouseDown = true;
+                 _isDrawing = true;
+                _start = e.GetPosition(canvas);
+                _preview.HandleStart(_start);
+                Debug.WriteLine("MouseDOWN:" + e.GetPosition(canvas));
+            
         }
 
         private void Border_MouseMove(object sender, MouseEventArgs e)
         {
-            if (_isDrawing)
-            {
-                var end = e.GetPosition(canvas);
-                _preview.HandleEnd(end);
-
-                // Xóa đi tất cả bản vẽ cũ và vẽ lại những đường thẳng trước đó
-                canvas.Children.Clear(); // Xóa đi toàn bộ
-
-                if(color_ComboBox.SelectedIndex >=0)
+         
+                if (_isDrawing)
                 {
-                    color = color_ComboBox.SelectedIndex;
-                }
-                if(thickness_ComboBox.SelectedIndex >=0)
-                {
-                    thickness = thickness_ComboBox.SelectedIndex + 1;
-                }
-                if(stroke_type_ComboBox.SelectedIndex >=0)
-                {
-                    stroke_type = stroke_type_ComboBox.SelectedIndex;
-                }
+                    var end = e.GetPosition(canvas);
+                    _preview.HandleEnd(end);
 
-                // Vẽ lại những hình đã vẽ trước đó
-                int i = 0;
-                foreach (var item in _drawnShapes)
-                {
-                    
-                    var painter = _painterPrototypes[item.Name];
+                    // Xóa đi tất cả bản vẽ cũ và vẽ lại những đường thẳng trước đó
+                    canvas.Children.Clear(); // Xóa đi toàn bộ
+
+                    if (color_ComboBox.SelectedIndex >= 0)
+                    {
+                        color = color_ComboBox.SelectedIndex;
+                    }
+                    if (thickness_ComboBox.SelectedIndex >= 0)
+                    {
+                        thickness = thickness_ComboBox.SelectedIndex + 1;
+                    }
+                    if (stroke_type_ComboBox.SelectedIndex >= 0)
+                    {
+                        stroke_type = stroke_type_ComboBox.SelectedIndex;
+                    }
+
+                    // Vẽ lại những hình đã vẽ trước đó
+                    int i = 0;
+                    foreach (var item in _drawnShapes)
+                    {
+
+                        var painter = _painterPrototypes[item.Name];
 
 
-                    var shape = painter.Draw(item);                  
-                    canvas.Children.Add(shape);
-                    ++i;
-                }
+                        var shape = painter.Draw(item);
+                        canvas.Children.Add(shape);
+                        ++i;
+                    }
 
-                var previewPainter = _painterPrototypes[_preview.Name];
-                previewPainter.setColor(_preview, color);
-                previewPainter.setThickness(_preview, thickness);
-                previewPainter.setStrokeType(_preview, stroke_type);
-                var previewElement = previewPainter.Draw(_preview);
-                canvas.Children.Add(previewElement);
+                    var previewPainter = _painterPrototypes[_preview.Name];
+                    previewPainter.setColor(_preview, color);
+                    previewPainter.setThickness(_preview, thickness);
+                    previewPainter.setStrokeType(_preview, stroke_type);
+                    var previewElement = previewPainter.Draw(_preview);
+                    canvas.Children.Add(previewElement);
+                
             }
         }
 
         private void Border_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            _isDrawing = false;
 
-            var end = e.GetPosition(canvas); // Điểm kết thúc
-
-            _preview.HandleEnd(end);
-            _drawnShapes.Add(_preview.Clone() as IShapeEntity);
-
-
-            for (int i = currentIndex + 1; i < _drawnList.Count(); i++)
+            if (_isMouseDown)
             {
-                _drawnList.RemoveAt(i);
-                i--;
-            }
-            _drawnList.Add(_preview.Clone() as IShapeEntity);
-            currentIndex++;
+                _isDrawing = false;
 
+                var end = e.GetPosition(canvas); // Điểm kết thúc
+                Debug.WriteLine("MouseUP:" + e.GetPosition(canvas));
+
+                _preview.HandleEnd(end);
+                _drawnShapes.Add(_preview.Clone() as IShapeEntity);
+
+
+                for (int i = currentIndex + 1; i < _drawnList.Count(); i++)
+                {
+                    _drawnList.RemoveAt(i);
+                    i--;
+                }
+                _drawnList.Add(_preview.Clone() as IShapeEntity);
+                currentIndex++;
+            }
+           
         }
 
         public void readData()
@@ -314,6 +323,12 @@ namespace DemoPaintPlugin
         {
 
             readData();
+            foreach (var item in _drawnShapes)
+            {
+                _drawnList.Add(item.Clone() as IShapeEntity);
+            }
+            currentIndex = _drawnList.Count - 1;
+
         }
         private void save_Click(object sender, RoutedEventArgs e)
         {
@@ -322,8 +337,9 @@ namespace DemoPaintPlugin
 
         private void loadImage_Click(object sender, RoutedEventArgs e)
         {
+            
             Microsoft.Win32.OpenFileDialog dl1 = new Microsoft.Win32.OpenFileDialog();
-            dl1.FileName = "MYFileSave";
+            dl1.FileName = "MyFileSave";
             dl1.DefaultExt = ".png";
             dl1.Filter = "Image documents (.png)|*.png";
             Nullable<bool> result = dl1.ShowDialog();
@@ -331,24 +347,26 @@ namespace DemoPaintPlugin
             if (result == true)
             {
                 string filename = dl1.FileName;
-               
                 ImageBrush brush = new ImageBrush();
-                Uri uri = new Uri(@filename, UriKind.Relative);
+                Uri uri = new Uri(filename, UriKind.Relative);
                 var bitmapImage = new BitmapImage();
 
                 bitmapImage.BeginInit();
                 bitmapImage.UriSource = uri;
                 bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
                 bitmapImage.EndInit();
 
                 brush.ImageSource = bitmapImage;
                 canvas.Background = brush;
                 canvas.Children.Clear();
                 _drawnShapes.Clear();
+
             }
+            _isMouseDown = false;
 
         }
-        
+
         private void saveImage_Click(object sender, RoutedEventArgs e)
         {
             RenderTargetBitmap targetBitmap =
@@ -373,7 +391,7 @@ namespace DemoPaintPlugin
 
         private void undo_Click(object sender, RoutedEventArgs e)
         {
-            if (_drawnShapes.Count() >= 0)
+            if (_drawnShapes.Count() > 0)
             {
                 canvas.Children.Clear();
                 _drawnShapes.RemoveAt(_drawnShapes.Count() - 1);
